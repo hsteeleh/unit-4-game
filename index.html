@@ -1,0 +1,125 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crystal Math</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <script src="assets/javascript/game.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    
+    <h1>Crystal Math</h1>
+    <h2>Use the crystals to match the number below!</h2>
+    <h3>Number to Guess: <span id="number-to-guess"></span></h3>
+
+    <!--Crystal Images-->
+    <div id="score"></div>
+    <div id = "crystals">
+        <div id="Crystal1">
+            <img src= "assets/images/Crystal1.png">
+        </div>
+  
+        <div id="Crystal2">
+            <img src="assets/images/Crystal2.png">
+        </div>
+        <div id="Crystal3">
+            <img src="assets/images/Crystal3.png">
+        </div>
+        <div id="Crystal4">
+            <img src="assets/images/Crystal4.png">
+        </div>
+    </div>
+    <script>
+        var playerScore = 0
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        };
+        var targetNumber = getRandomInt(9, 120);
+        
+        var crystals = {
+            blue: {
+                name: "Blue",
+                value: 0,
+            },
+            green: {
+                name: "Green",
+                value: 0,
+            },
+            red: {
+                name: "Red",
+                value: 0,
+            },
+            orange: {
+                name: "Orange",
+                value: 0,
+            },
+        }
+
+        crystals.blue.value = getRandomInt(1, 12);
+        crystals.green.value = getRandomInt(1 , 12);
+        crystals.red.value = getRandomInt(1 , 12);
+        crystals.orange.value = getRandomInt(1 , 12);
+
+         function addValues (clickedCrystal) {
+             playerScore += clickedCrystal.value
+             $("#score").text(playerScore)
+         }
+         
+            //comeback to this
+         $("#Crystal1").click(function(){
+             addValues(crystals.blue)
+         })
+
+         $("#Crystal2").click(function(){
+             addValues(crystals.green)
+         })
+         $("#Crystal2").click(function(){
+             addValues(crystals.red)
+         })
+         $("#Crystal2").click(function(){
+             addValues(crystals.orange)
+         })
+
+
+
+
+
+// <!-- 
+// still needs to happen:
+//  if/else statements to compare scores
+// still need to link to projects page in profile 
+//        
+//
+//
+//    
+//    
+//  -->
+
+    </script>
+
+
+</body>
+</html>
+
+<!--
+    get random number genterated
+    get it to show in HTML
+    get crystals to respond to click
+    crystal click generates a number
+    crystal click number shows on HTML
+    compare numbers
+    show wins and losses
+    generate new number at the end
+
+
+
+
+-->
+
+
